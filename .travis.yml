@@ -1,5 +1,12 @@
 language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - openjdk8
+sudo: false
+os: linux
+jdk: oraclejdk8
+install: 
+script: 
+  - set -ev
+  - cd Code/Java/DBServer
+  - mvn clean install
+cache:
+ directories:
+  - $HOME/.m2
