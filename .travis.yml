@@ -2,3 +2,5 @@ language: java
 jdk:
   - openjdk8
 install: true
+script:
+  - sudo /usr/local/maven/bin/mvn clean package
