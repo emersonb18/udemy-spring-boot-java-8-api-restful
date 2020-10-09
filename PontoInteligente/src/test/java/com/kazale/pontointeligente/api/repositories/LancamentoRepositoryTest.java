@@ -67,8 +67,8 @@ public class LancamentoRepositoryTest {
 	
 	@Test
 	public void testBuscarLancamentosPorFuncionarioIdPaginado() {
-		Pageable page = PageRequest.of(0, 3, Sort.by("name").descending());
-		Page<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId, page);
+	   PageRequest pageRequest = PageRequest.of(0, 10, Sort.Direction.ASC, "id");
+	   Page<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId, pageRequest);
 		
 		assertEquals(2, lancamentos.getTotalElements());
 	}
